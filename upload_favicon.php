@@ -23,7 +23,7 @@
 			$type = explode(".", $name);
 			$type = $type[1];
 			$dir = FAVICON_DIR;
-			$name = $dir."\\".$_SESSION['valid_user'];
+			$name = $dir."\\".iconv("UTF-8","gb2312",$_SESSION['valid_user']);
 //			move_uploaded_file($_FILES["file"]["tmp_name"], $name.".".$type);
 			resizeimage($_FILES["file"]["tmp_name"], 120, 120, $name.".png");
 			unlink($_FILES["file"]["tmp_name"]);

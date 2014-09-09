@@ -10,6 +10,7 @@
 				include(ERR_FILE);
 				exit;
 			}
+			
 		}
 		
 		public function insert_id() {

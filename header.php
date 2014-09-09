@@ -201,7 +201,7 @@
 		if($page == "index")
 			echo 'class="selected"';
 		echo '	>
-										<a href="index.php">首页</a>
+										<a href="index.php">网站首页</a>
 									</li>
 									<li ';
 		if($page == "activity")
@@ -219,7 +219,7 @@
 		if($page == "teacher")
 			echo 'class="selected"';
 		echo '>
-										<a href="teacher.php">教师大厅</a>
+										<a href="teacher.php">海角教师</a>
 									</li>
 									<li ';
 		if($page == "resource")
@@ -242,7 +242,7 @@
 		if($page == "contact")
 			echo 'class="selected"';
 		echo '>
-										<a href="contact.php">联系我们</a>
+										<a href="contact.php">联系海角</a>
 									</li>
 								</ul>
 							</div>
@@ -446,7 +446,7 @@
 							<div id="navigation">
 								<ul>
 									<li class="selected" >
-										<a href="index.php">首页</a>
+										<a href="index.php">网站首页</a>
 									</li>
 									<li >
 										<a href="activity.php">公益活动</a>
@@ -455,7 +455,7 @@
 										<a href="demand.php">需求大厅</a>
 									</li>
 									<li >
-										<a href="teacher.php">教师大厅</a>
+										<a href="teacher.php">海角教师</a>
 									</li>
 									<li >
 										<a href="resource.php">资源文库</a>
@@ -470,7 +470,7 @@
 									<li>
 									</li>
 									<li >
-										<a href="contact.php">联系我们</a>
+										<a href="contact.php">联系海角</a>
 									</li>
 								</ul>
 							</div>
