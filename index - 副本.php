@@ -15,26 +15,29 @@
 			</script>
 			
 			<div id="contents">
-				<div style="height:200px">
+				<div style="width:860px;height:200px">
 					<div id="main">
 						<div id="testimonials" class="box">
 							<div>
-								<img src="images/header-pic.png" alt="Img" id="head1" style="height:197px;width:1162px;">
-								<img src="images/jdback.png" alt="Img" id="head2" style="display:none;height:197px;width:1162px;">
-								<img src="images/back.png" alt="Img" id="head3" style="display:none;height:197px;width:1162px;">
+								<img src="images/header-pic.png" alt="Img" id="head1" style="height:197px;width:565px;">
+								<img src="images/jdback.png" alt="Img" id="head2" style="display:none;height:197px;width:565px;">
+								<img src="images/back.png" alt="Img" id="head3" style="display:none;height:197px;width:565px;">
 							</div>
 						</div>
 					</div>
+					<div id="sidebar">
+						<img src="images/data.jpg" style="height:200px;margin-left:25px;margin-top:6px;"/>
+		
+						</div>
+					</div>
 				</div>
-			</div>
-				<div id="contents">
-					<img src="images/a.jpg" />
-				<!--	<div style="float:left;margin-left:125px;margin-right:10px"><a href="teacher.php"><img src="images/teacher_page.png" style="height:60px;"  alt="Img"></a></div>
+				<div style="margin-bottom:5px;margin-top:5px;width:860px;height:75px;margin-left:49px;">
+					<div style="float:left;margin-left:125px;margin-right:10px"><a href="teacher.php"><img src="images/teacher_page.png" style="height:60px;"  alt="Img"></a></div>
 					<div style="float:left;margin-left:70px;margin-right:125px"><a href="http://202.120.1.47/"><img src="images/vedio_room.png" style="height:60px;"  alt="Img"></a></div>
-				--></div>
+				</div>
 				
 					
-					<div  id="contents" >
+					<div style="margin-bottom:20px;margin-top:5px;width:860px;height:150px;margin-left:49px;border:solid 2px #A3A1A1;box-shadow: 2px 2px 1px #C2BCBC;">
 						<div style="background-color:#ccc;margin-bottom:5px;height:30px;margin-top:-2px;">
 							<p class="title">筑梦.圆梦心愿墙</p>
 						</div>	
@@ -99,7 +102,7 @@
 				</div>
 				
 				
-				<div id="contents">
+				<div style="margin-bottom:5px;margin-top:5px;width:860px;height:150px;margin-left:49px;border:2px solid #A3A1A1;box-shadow: 2px 2px 1px #C2BCBC;">
 					<div style="background-color:#ccc;margin-bottom:5px;height:30px;margin-top:-2px;">
 						<p class="title">合作单位</p>
 					</div>	

@@ -9,9 +9,8 @@ body {
 	min-height: 1318px;*/
 }
 #page {
-	width: 90%;
+	width: 960px;
 	margin: 0 auto;
-	text-align:center;
 }
 img {
 	border: 0;
@@ -31,8 +30,8 @@ img {
 }
 /*------------------------------ HEADER ------------------------------*/
 #header {
-	margin-bottom: 2px;
-	height:55px;
+	margin-bottom: 20px;
+	padding-top: 15px;
 }
 
 /** Logo Region **/
@@ -45,7 +44,8 @@ img {
 /** Logo **/
 #logo {
 	float: left;
-	
+	margin-bottom: 8px;
+	margin-left: 49px;
 }
 
 /** Welcome **/
@@ -53,7 +53,6 @@ img {
 	float: right;
 	margin-top:20px;
 	margin-right:49px;
-	margin-top:-50px;
 }
 
 
@@ -100,21 +99,17 @@ img {
 /** Navigation **/
 #navigation {
 /*	background: url(../images/bg-navigation.png) no-repeat;*/
-	background-color:rgb(88, 130, 146);
+	background-color:rgb(58,184,234);
 	clear: both;
-	float:left;
-	margin-top: -50px;
-	margin-left: 300px;
-/*	height: 32px;
+	height: 32px;
 	width: 860px;
 	margin: 0 auto;
-	padding: 1px;*/
+	padding: 1px;
 }
 #navigation ul {
-/*	display: inline-block;
+	display: inline-block;
 	width: 860px;
-*/	list-style: none;
-	
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
@@ -137,7 +132,7 @@ img {
 
 #navigation li a {
 	color: #fff;
-/*	display: block;*/
+	display: block;
 	font:  15px/31px "黑体", Arial, Helvetica, sans-serif;
 	height: 15px;
 	text-decoration: none;
@@ -162,7 +157,7 @@ img {
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
 	display: inline-block;
-	width: 88%;
+	width: 865px;
 	padding: 0 47px;
 }
 #contents h1 {
@@ -262,7 +257,7 @@ hr {
 #main {
 	float: left;
 	min-height: 100px;
-/*	width: 566px;   */
+	width: 566px;
 }
 #main div.box {
 	background-position: left bottom;
@@ -589,7 +584,7 @@ hr {
 #footer > div {
 	background-color: #eee;
 	height: 100px;
-	width: 90%;
+	width: 822px;
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
 	margin: 0 auto;
