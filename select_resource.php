@@ -36,28 +36,61 @@
 	}
 	$data = $d->select($sql);
 	
-	
+		
 	foreach ($data as $item) {
 		echo '
+			<div id="teacher_intro" style="height:150px;">
+				<div id="teacher_intro_left" style="height:150px;">
 			
-			<ul class="nav nav-tabs " style="margin-top:6px;margin-bottom:0px;height:30px;" role="tablist">
-			<span style="display:none">'.$item['id_resource'].'</span>
-			<span style="display:none">'.$item['user_id_user'].'</span>
-			<li style="width:350px;margin-left:20px;"><span style="width:250px">'.$item['name'].'</span></li>
-			<li style="width:80px"><span>'.round($item['size']/(1024.0), 1).'k</span></li>
-			<li style="width:80px"><span>';
-			if($item['file_type'] == "buxian")
-				echo "不限";
-			else 
-				echo $item['file_type'];
-			echo '</span></li>
-			<li style="width:80px"><span>'.$item['count'].'</span></li>
-			<li style="width:120px"><span>'.substr($item['time'], 0 , 10).'</span></li>
-			<li style="width:120px"><button type="button" class="btn btn-default" onclick="down(this)" style="font-family:'."'黑体'".';margin-top:-3px;">下载</button></li>
-			</ul>
+				';
+				
+				echo '<img src="images/resource.png" alt="img" id="teacher_favicon" class="t_favicon" style="width:70px;height:100px;">'; 
+				
+		echo '
+				<div style="margin-top:35px;">
+				<p ><span class="user_name"><b>'.$item['name'].'</b></span> 
+					</p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p>文件大小：'.round($item['size']/(1024.0), 1).'k</p>
+					<p>上传时间：'.$item['time'].'&nbsp&nbsp&nbsp&nbsp</p>
+					';
+		echo 
+			'
+					
+				</div>
+				</div>
+				<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:100px;"></div>
+					
+				<div id="teacher_intro_right" style="height:150px;">
+					<div id="teacher_score" style="text-align:center;margin-top:35px;">
+						<span style="display:none">'.$item['id_resource'].'</span>
+						<span style="display:none">'.$item['user_id_user'].'</span>
+						<span style="display:none">'.$item['name'].'</span>
+						<p>已有'.$item['count'].'人下载</p>
+					<!--	<li style="width:120px"><button type="button" class="btn btn-default" onclick="down(this)" style="font-family:'."'黑体'".';margin-top:-3px;">下载</button></li>
+					-->
+						
+						<div class="detail" onclick="down(this)" style="margin-left:43%;">
+							<p style="padding-right:0px;margin-left:5px;" >我要下载</p>
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+		';
+
+
+	
+	
+		echo '
+			
+			
 			
 			';
 	}
+	
 	
 	echo '
 			<div id="page_select">

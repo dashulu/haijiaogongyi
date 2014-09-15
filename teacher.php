@@ -215,24 +215,20 @@
 		</div>
 	
 	<div id="contents">
-		<div id="teacher_select_region" style="border:1px solid #ccc">
+		<div id="teacher_select_region" >
 			<p><span>家教科目:</span><a>不限</a><a>语文</a><a>数学</a><a>英语</a><a>物理</a><a>化学</a><a>生物</a></P>
-					<p><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
+			<p style="padding-right:110px;"><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
 				<a>河北</a><a>山西</a><a>辽宁</a><a>吉林</a><a>黑龙江</a><a>江苏</a><a>浙江</a><a>安徽</a><a>福建</a>
 				<a>江西</a><a>河南</a><a>陕西</a><a>海南</a>
-				<?php
-					for($i = 0;$i < 30;$i++) {
-						echo '&nbsp';
-					}
-				?>
+			
 				<a>四川</a><a>贵州</a>
 				<a>广东</a><a>广西</a><a>山东</a><a>内蒙古</a><a>宁夏</a><a>新疆</a>
 				<a>湖南</a><a>湖北</a><a>甘肃</a><a>西藏</a>
-				</P>
+			</P>
 			<p><span>教师性别:</span><a>不限</a><a>男</a><a>女</a></P>
 			<p><span>教师分类:</span><a>不限</a><a>本科生</a><a>研究生</a><a>在职教师</a><a>其他</a></P>
 		</div>
-		<div id="teacher_result_region" style="border:1px solid #ccc">
+		<div id="teacher_result_region" >
 <?php
 	require_once("user.php");
 	require_once("db_lesson.php");
@@ -254,18 +250,21 @@
 		echo '
 			<div id="teacher_intro">
 				<div id="teacher_intro_left">
-				<div style="margin-top:7px">
+			
 				';
 				if($item['has_pic'] == 0) {
 					echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon" class="favicon">'; 
 				} else {
-					echo '<img src="favicon_dir/'.$item["name"].'.png" alt="img" id="teacher_favicon" class="favicon">';
+					echo '<img src="favicon_dir/'.$item["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">';
 				}
 		echo '
-				<p><span class="user_name"><b>'.$item['name'].'</b></span> 
+				<div style="margin-top:35px;">
+				<p ><span class="user_name"><b>'.$item['name'].'</b></span> 
 						<span style="display:none">'.$item['id_user'].'</span>
+						<!--
 						<div  onclick="post_message_check(this)"  class="leave_message_button" style="margin-right:90px;" >给我留言</div>
 						<div onclick="post_score_check(this)"  class="leave_message_button" >我要评价</div>
+						-->
 					</p>
 					<p></p>
 					<p></p>
@@ -307,8 +306,10 @@
 			'</p>
 				</div>
 				</div>
+				<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
+					
 				<div id="teacher_intro_right" >
-					<div id="teacher_score">
+					<div id="teacher_score" style="text-align:center;">
 						<p style="margin-left:50px;margin-top:65px;">教师评价：
 			';
 		for($i=0;$i < 5;$i++) {
@@ -323,6 +324,16 @@
 		echo '
 							<span>'.round($item['score'], 1).'/'.$item['score_count'].'</span>
 						</p>
+						
+						<span style="display:none">'.$item['id_user'].'</span>
+						
+						<div class="detail" onclick="post_score_check(this)" style="margin-left:43%;">
+							<p style="padding-right:0px;margin-left:5px;">我要评价</p>
+						</div>
+						
+						<div class="detail" onclick="post_message_check(this)" style="margin-left:43%;">
+							<p style="padding-right:0px;margin-left:5px;">给我留言</p>
+						</div>
 					</div>
 				</div>
 			</div>

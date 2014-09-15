@@ -56,7 +56,7 @@
 		$sql = "select * from demand order by id_demand desc limit ".$begin.",".DEMAND_PAGE_NUM;
 	}
 	$data = $d->select($sql);
-foreach ($data as $item) {
+	foreach ($data as $item) {
 			echo '<div id="teacher_intro">
 					<div>
 						<div id="teacher_intro_left">';
@@ -65,14 +65,23 @@ foreach ($data as $item) {
 						if($name["has_pic"] == 0) {
 							echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon">'; 
 						} else {
-							echo '<img src="favicon_dir/'.$name["name"].'.png" alt="img" id="teacher_favicon" class="favicon">'; 
+							echo '<img src="favicon_dir/'.$name["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">'; 
 						}
 			echo '
-						<div  style="margin-top:7px;">
+						<div  style="margin-top:30px;">
 							<p width="200px">
-								<span class="user_name"><b>'.$item['name'].'</b>
+								<span class="user_name"><b>';
+								
+								if(strlen($item['name']) > 12) {
+									echo substr($item['name'], 0, 12);
+								} else {
+									echo $item['name'];
+								}
+			echo '</b>
 								</span> 
-								<div ><span style="display:none">'.$item['user_id_user'].'</span><div onclick="post_message_check(this)" src="images/leave_message.png" class="leave_message_button">给我留言</div></div>
+								<div ><span style="display:none">'.$item['user_id_user'].'</span>
+								<!--	<div onclick="post_message_check(this)" src="images/leave_message.png" class="leave_message_button">给我留言</div>
+								--></div>
 							</p>
 							<p></p>
 							<p></p>
@@ -85,7 +94,7 @@ foreach ($data as $item) {
 			} else {
 				echo '保密';
 			}
-			echo '</p><p>所在地区：';
+			echo '</p><p>联系方式:'.$item['phone'].'</p><p>所在地区：';
 			if($item['addr'] == '') {
 				echo '未知';
 			} else {
@@ -100,16 +109,24 @@ foreach ($data as $item) {
 			echo	'</p><p>发布日期：'.$item['time'].'</p>
 						</div>
 						</div>
+						<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
+					
 						<div id="teacher_intro_right" >
-							<div style="margin-left:8px">
-							<h4>需求描述</h4>
-							<p>'.$item['description'].'</p>
-							<p>联系方式:'.$item['phone'].'</p></div>
+							<div style="margin-left:15%;margin-top:45px;margin-right:10%;">
+								<span style="display:none">'.$item['user_id_user'].'</span>
+								<div style="padding-top:1px;height:33px;background:url(../images/demand_back.png);background-repeat:no-repeat;color:#fff;">
+									<p style="font-size:17px;margin-left:7px;margin-top:5px;color:#fff;">需求描述</p>
+								</div>
+								<p style="margin-top:15px;margin-left:15px;">'.$item['description'].'</p>
+								<div class="detail" onclick="post_message_check(this)">
+									<p style="padding-right:0px;margin-left:5px;">给我留言</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>';
 		}
-				
+					
 		echo '
 			<div id="page_select">
 				<span  id="page_num" style="display:none">'.$page_num.'</span>

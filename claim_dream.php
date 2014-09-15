@@ -35,32 +35,38 @@
 				$has_pic = $user->get_personal_info_from_id($item['user_id_user']);
 				$has_pic = $has_pic[0];
 				if($has_pic['has_pic'] == 0) {
-					echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon" class="favicon">'; 
+					echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon" class="t_favicon">'; 
 				} else {
-					echo '<img src="favicon_dir/'.$has_pic["name"].'.png" alt="img" id="teacher_favicon" class="favicon">';
+					echo '<img src="favicon_dir/'.$has_pic["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">';
 				}
 		echo '
-				<div style="margin-top:10px">
-				<p><span class="user_name"><b>'.$item['id_dream'].'</b>&nbsp</span> <span class="user_name"><b>'.$item['name'].'</b></span> 
-						<span>&nbsp<b>'.$item['addr'].'</b></span>
+				<div style="margin-top:35px">
+				<p> <span class="user_name"><b>'.$item['name'].'</b></span> 
 					</p>
-					<p><span style="color:#F8B95B;">心愿:</span>'.$item['description'].'</p>';
-		echo '<p><span style="color:#F8B95B;">心愿故事:</span>'.$item['story'].'</p>';
-		echo '<p><span style="color:#F8B95B;">联系方式:</span>'.$item['phone'].'</p>';
+					<p><span >心愿:</span>'.$item['description'].'</p>';
+		echo '<p><span >心愿故事:</span>'.$item['story'].'</p>';
+		echo '<p><span >所在地区:</span>'.$item['addr'].'</p>';
+		echo '<p><span >联系方式:</span>'.$item['phone'].'</p>';
 		echo '</div></div>';
 		echo 
-			'
+			'<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
+					
 				<div id="dream_intro_right" >
-					<div>
+					<div style="text-align:center;">
 						<span style="display:none">'.$item['id_dream'].'</span>';
 						if($item['state'] == 1) {
-							echo '<a  onclick="check_user_login2(this)"><div class="claim_dream_div">认领心愿</div></a>';
+							echo '<div class="detail" onclick="check_user_login2(this)" style="margin-top:100px;margin-left:20%;">
+									<p style="padding-right:0px;">认领心愿</p>
+								</div>';
 						} else {
-							echo '<img src="images/renling.jpg" style="width: 100px;margin-top: 35px;margin-left: -50px;">';
-							echo '<p style="margin-top: -50px;margin-left: 60px;">
+							echo '<div style="margin-top:100px;margin-left:20%;text-align:left;">';
+					
+							echo '<p style="margin-left: -10px;">
 							<span class="user_name"><b>'.$item['dream_helper_name'].'</b>&nbsp</span><b>'.$item['dream_helper_addr'].'</b></p>';
-							echo '<p style="margin-left: 60px;">
-								<span style='."'".'font-family: "微软雅黑" "黑体";font-size: 12px;font-style: italic;margin-left: 35px;.'."'".'>已认领该心愿</span></p>';	
+							echo '<p >
+								<img src="images/renling.jpg" style="margin-left:-50;width: 30px;"></p>
+								<div class="detail" style="margin-left:-10px;margin-top:-44px;text-align:center;font-size:15px;background-color:rgb(75,92,102);color:#fff;">已认领</span></div>';	
+							echo '</div>';
 						}
 						
 				echo '	</div>

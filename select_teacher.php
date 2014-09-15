@@ -73,18 +73,21 @@
 		echo '
 			<div id="teacher_intro">
 				<div id="teacher_intro_left">
-				<div style="margin-top:7px">
+			
 				';
 				if($item['has_pic'] == 0) {
 					echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon" class="favicon">'; 
 				} else {
-					echo '<img src="favicon_dir/'.$item["name"].'.png" alt="img" id="teacher_favicon" class="favicon">';
+					echo '<img src="favicon_dir/'.$item["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">';
 				}
 		echo '
-				<p><span class="user_name"><b>'.$item['name'].'</b></span> 
+				<div style="margin-top:35px;">
+				<p ><span class="user_name"><b>'.$item['name'].'</b></span> 
 						<span style="display:none">'.$item['id_user'].'</span>
+						<!--
 						<div  onclick="post_message_check(this)"  class="leave_message_button" style="margin-right:90px;" >给我留言</div>
 						<div onclick="post_score_check(this)"  class="leave_message_button" >我要评价</div>
+						-->
 					</p>
 					<p></p>
 					<p></p>
@@ -126,8 +129,10 @@
 			'</p>
 				</div>
 				</div>
+				<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
+					
 				<div id="teacher_intro_right" >
-					<div id="teacher_score">
+					<div id="teacher_score" style="text-align:center;">
 						<p style="margin-left:50px;margin-top:65px;">教师评价：
 			';
 		for($i=0;$i < 5;$i++) {
@@ -142,12 +147,22 @@
 		echo '
 							<span>'.round($item['score'], 1).'/'.$item['score_count'].'</span>
 						</p>
+						
+						<span style="display:none">'.$item['id_user'].'</span>
+						
+						<div class="detail" onclick="post_score_check(this)" style="margin-left:43%;">
+							<p style="padding-right:0px;margin-left:5px;">我要评价</p>
+						</div>
+						
+						<div class="detail" onclick="post_message_check(this)" style="margin-left:43%;">
+							<p style="padding-right:0px;margin-left:5px;">给我留言</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		';
 	}
-	
+
 	echo '
 			<div id="page_select">
 				<span  id="page_num" style="display:none">'.$page_num.'</span>

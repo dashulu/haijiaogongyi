@@ -67,9 +67,9 @@
 	
 		
 		function down(my){	
-			$file = my.parentElement.parentElement.children[2].children[0].innerHTML;
-			$user_id = my.parentElement.parentElement.children[1].innerHTML;
-			$resource_id = my.parentElement.parentElement.children[0].innerHTML;
+			$file = my.parentElement.children[2].innerHTML;
+			$user_id = my.parentElement.children[1].innerHTML;
+			$resource_id = my.parentElement.children[0].innerHTML;
 			window.open("download.php?file="+$file+"&user_id="+$user_id+"&resource_id="+$resource_id);
 	/*		$.ajax({ 
 				type: "POST", 
@@ -121,7 +121,7 @@
 		</div>
 	
 	<div id="contents">
-		<div id="teacher_select_region" style="border:1px solid #ccc">
+		<div id="teacher_select_region" >
 			<p><span>资源类别:</span><a>不限</a><a>语文</a><a>数学</a><a>英语</a><a>物理</a><a>化学</a><a>生物</a><a>其他</a></P>
 			<p><span>文件类型:</span><a>不限</a><a>ppt</a><a>doc</a>
 				<a>txt</a><a>pdf</a>
@@ -135,24 +135,17 @@
 			<button class="btn btn-primary " >
 				时间排序
 			</button>-->
-			<button class="btn btn-primary" style="float:right;margin-bottom:0px;margin-right:40px;" onclick = "check_user_login()">
-				我要上传
-			</button>
+			<div  style="border:solid 2px #B3AFAF;cursor:hand;height:25px;width:100px;font-size:17px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
+				<p style="margin-top:2px;text-align:center">我要上传</p>
+			</div>
+			
+
 			
 		</div>
 		
-		<div>
-			<ul class="nav nav-tabs " role="tablist" id="file_list_tile">
-				<li style="width:320px;margin-left:40px;">文件名</li>
-				<li style="width:60px;margin-left:10px;">大小</li>
-				<li style="width:60px;margin-left:20px;">类别</li>
-				<li style="width:80px;margin-left:-10px;">下载次数</li>
-				<li style="width:80px;margin-left:30px;">上传日期</li>
-			</ul>
-			
-		</div>
+	
 		
-		<div id="teacher_result_region" style="border:1px solid #ccc;">
+		<div id="teacher_result_region" style="background-color:rgb(241,242,242);">
 <?php
 	require_once("user.php");
 	require_once("db_resource.php");
@@ -169,22 +162,54 @@
 	
 	foreach ($data as $item) {
 		echo '
+			<div id="teacher_intro" style="height:150px;">
+				<div id="teacher_intro_left" style="height:150px;">
 			
-			<ul class="nav nav-tabs " style="margin-top:6px;margin-bottom:0px;height:30px;" role="tablist">
-			<span style="display:none">'.$item['id_resource'].'</span>
-			<span style="display:none">'.$item['user_id_user'].'</span>
-			<li style="width:350px;margin-left:20px;"><span style="width:250px">'.$item['name'].'</span></li>
-			<li style="width:80px"><span>'.round($item['size']/(1024.0), 1).'k</span></li>
-			<li style="width:80px"><span>';
-			if($item['file_type'] == "buxian")
-				echo "不限";
-			else 
-				echo $item['file_type'];
-			echo '</span></li>
-			<li style="width:80px"><span>'.$item['count'].'</span></li>
-			<li style="width:120px"><span>'.substr($item['time'], 0 , 10).'</span></li>
-			<li style="width:120px"><button type="button" class="btn btn-default" onclick="down(this)" style="font-family:'."'黑体'".';margin-top:-3px;">下载</button></li>
-			</ul>
+				';
+				
+				echo '<img src="images/resource.png" alt="img" id="teacher_favicon" class="t_favicon" style="width:70px;height:100px;">'; 
+				
+		echo '
+				<div style="margin-top:35px;">
+				<p ><span class="user_name"><b>'.$item['name'].'</b></span> 
+					</p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p>文件大小：'.round($item['size']/(1024.0), 1).'k</p>
+					<p>上传时间：'.$item['time'].'&nbsp&nbsp&nbsp&nbsp</p>
+					';
+		echo 
+			'
+					
+				</div>
+				</div>
+				<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:100px;"></div>
+					
+				<div id="teacher_intro_right" style="height:150px;">
+					<div id="teacher_score" style="text-align:center;margin-top:35px;">
+						<span style="display:none">'.$item['id_resource'].'</span>
+						<span style="display:none">'.$item['user_id_user'].'</span>
+						<span style="display:none">'.$item['name'].'</span>
+						<p>已有'.$item['count'].'人下载</p>
+					<!--	<li style="width:120px"><button type="button" class="btn btn-default" onclick="down(this)" style="font-family:'."'黑体'".';margin-top:-3px;">下载</button></li>
+					-->
+						
+						<div class="detail" onclick="down(this)" style="margin-left:43%;">
+							<p style="padding-right:0px;margin-left:5px;" >我要下载</p>
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+		';
+
+
+	
+	
+		echo '
+			
+			
 			
 			';
 	}

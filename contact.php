@@ -3,11 +3,13 @@
 	do_header("海角课堂","contact");
 ?>
 		<div id="contents">
-			<div class="box">
-				<div>
+			<div>
+				<div  style="background:url(../images/contact_back.png);min-height:500px;">
 					<div style="margin-left:20px;margin-right:20px">
 					
-						<h3  style="font-family:'黑体';">海角公益简介</h3>
+						<div  style="margin-top:20px;margin-bottom:20px;font-family:'黑体';background:url(../images/contact_title.png) no-repeat;font-size:17px;color:#fff;height:27px;padding-top:1px;">
+							<p style="margin-left:20px;margin-top:3px;">海角公益简介</p>
+						</div>
 						<p style="font-family:'黑体';">
 						海角公益组织有是一家以提供线上教育服务为龙头，研发完善线上软件与硬件为依托，
 						致力于实现教育资源再分配，解决留守儿童与流动儿童群体教育缺失问题的民办非营利机构。
@@ -25,7 +27,9 @@
 				
 						<div >
 						
-							<h3  style="font-family:'黑体';">联系我们</h3>
+							<div  style="margin-top:20px;margin-bottom:20px;font-family:'黑体';background:url(../images/contact_title.png) no-repeat;font-size:17px;color:#fff;height:27px;padding-top:1px;">
+								<p style="margin-left:20px;margin-top:3px;">联系我们</p>
+							</div>
 							<p  style="font-family:'黑体';">
 							地址：上海市闵行区东川路800号；
 							</p>

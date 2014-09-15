@@ -11,7 +11,7 @@ body {
 #page {
 	width: 90%;
 	margin: 0 auto;
-	text-align:center;
+	text-align:left;
 }
 img {
 	border: 0;
@@ -32,28 +32,31 @@ img {
 /*------------------------------ HEADER ------------------------------*/
 #header {
 	margin-bottom: 2px;
-	height:55px;
+	height:60px;
+	background-color:rgb(221, 223, 225);
 }
 
 /** Logo Region **/
 #logo_region {
 /*	border:1px solid #ccc;
 	height:120px;
-*/	width:858px;
+*/	width:100%;
 }
 
 /** Logo **/
 #logo {
 	float: left;
-	
+	margin-left:120px;
 }
 
 /** Welcome **/
 #welcome {
+	background-color:rgb(221, 223, 225);
 	float: right;
-	margin-top:20px;
-	margin-right:49px;
-	margin-top:-50px;
+	margin-right:10%;
+	
+	height:55px;
+	margin-top:0px;
 }
 
 
@@ -100,11 +103,12 @@ img {
 /** Navigation **/
 #navigation {
 /*	background: url(../images/bg-navigation.png) no-repeat;*/
-	background-color:rgb(88, 130, 146);
+	background-color:rgb(221, 223, 225);
 	clear: both;
-	float:left;
-	margin-top: -50px;
-	margin-left: 300px;
+	float:right;
+	margin-top: -55px;
+	height:55px;
+	margin-right:20%;
 /*	height: 32px;
 	width: 860px;
 	margin: 0 auto;
@@ -114,16 +118,13 @@ img {
 /*	display: inline-block;
 	width: 860px;
 */	list-style: none;
-	
 	margin: 0;
 	padding: 0;
 }
 #navigation li {
 	float: left;
-	background-position: 0 -118px;
-	background-repeat: no-repeat;
-	height: 30px;
-	width: 90px;
+	height: 55px;
+	width: 80px;
 	margin: 0;
 	padding-left: 1px;
 	text-align: center;
@@ -134,6 +135,16 @@ img {
 	padding-left: 0;
 }
 
+#navigation li a p {
+	color: #fff;
+	margin-top:0px;
+	margin-bottom:0px;
+/*	display: block;*/
+	font:  15px/31px "黑体", Arial, Helvetica, sans-serif;
+	height: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
 
 #navigation li a {
 	color: #fff;
@@ -152,10 +163,9 @@ img {
 	color: #e4e1bd;
 }
 #navigation li.selected  {
-	background-color: rgb(129,219,254);
-	margin-top: -1px;
-	margin-left: -2px;
-	height: 107%;
+	background-color: rgb(75,92,102);
+
+	height: 100%;
 }
 
 
@@ -236,26 +246,21 @@ img {
 }
 hr {
 	border:0;
-	border-top: 1px solid #bbbbbb;
+	border-top: 1px solid #000;
 	margin-bottom: 30px;
 }
 
 #activity_main {
-	float: right;
-	width: 645px;
-	border: 1px solid #A09F9F;
-	box-shadow: 2px 2px 1px #C2BCBC;
+	text-align:left;
 	margin-left:5px;
 	margin-right:4px;
 	margin-bottom:5px;
 }
 
 .main_center {
-	float: left;
-	width: 634px;
-	border: 1px solid #A09F9F;
-	box-shadow: 2px 2px 1px #C2BCBC;
-	margin-left:20px;
+
+
+	margin-left:50px;
 	margin-bottom:5px;
 }
 /** MAIN **/
@@ -669,54 +674,61 @@ hr {
 }
 
 #teacher_favicon {
-	margin-left:20px;
-	margin-top:10px;
-	margin-bottom:20px;
+	margin-left:10%;
+	margin-top:25px;
+	margin-bottom:25px;
 	margin-right:20px;
 	float:left;
+	height:200px;
+	width:200px;
 }
 #teacher_result_region {
-	width:857px;
+	text-align:left;
 	margin-left:2px;
 	margin-bottom:5px;
 	font-family:"黑体";
-	border: 1px solid #A09F9F;
-	box-shadow: 2px 2px 1px #C2BCBC;
+	
+
 }
 #teacher_intro {
-	height:150px;
-}
-#teacher_intro_right {
-	border:1px solid #ccc;
-	float:left;
-	width:354px;
-	height:150px;
-}
-
-#dream_intro_right {
-	border:1px solid #ccc;
-	float:left;
-	width:304px;
-	height:150px;
-}
-
-#dream_intro_left {
-	border:1px solid #ccc;
-	float:left;
-	width:549px;
-	height:150px;
+	background-color: rgb(241,242,242);
+	height:250px;
+	margin-bottom:15px;
+	
 }
 
 #teacher_intro_left {
-	border:1px solid #ccc;
 	float:left;
-	width:499px;
-	height:150px;
+	width:50%;
+	height:250px;
 }
 
+#teacher_intro_right {
+	float:left;
+	width:49%;
+	height:250px;
+}
+
+#dream_intro_right {
+	float:left;
+	width:39%;
+	height:250px;
+}
+
+#dream_intro_left {
+	float:left;
+	width:60%;
+	height:250px;
+}
+
+
+
 #teacher_intro  p {
-	margin:0 0 2;
+	margin:0 0 12;
+	padding-right:20px;
 	font-family:"黑体";
+	font-size:15px;
+	color: rgb(123,138,146);
 }
 
 .leave_message_button {
@@ -747,12 +759,18 @@ hr {
 	margin-left:20px;
 	margin-right:5px;
 	font-weight:bold;
-	color:#00ccff;
+	font-size:15px;
 }
 
 #teacher_select_region p {
 	margin-top:5px;
 	margin-bottom:5px;
+}
+
+#teacher_result_region hr {
+	margin-left:5%;
+	margin-top:30px;
+	width:90%;
 	
 }
 
@@ -772,7 +790,25 @@ hr {
 }
 
 #teacher_select_region a.item_selected {
-	background-color:#cccccc;
+	background-color:rgb(75, 92, 102);
+	color:#fff;
+}
+
+.detail {
+	border: solid 1px #B3AFAF;
+	width: 80px;
+	font-size: 20px;
+	height: 20px;
+	padding: 5px;
+	margin-top:20px;
+	margin-left:50px;
+	cursor:hand;
+}
+
+.activity_intro {
+	height:300px;
+	background-color:rgb(241, 242, 242);
+	margin-bottom:15px;
 }
 
 .title {
@@ -783,11 +819,11 @@ hr {
 	line-height:2;
 }
 .title_background{
-	background-color:#ccc;
+	background:url(../images/title_background.png) no-repeat;
 	margin-bottom:5px;
 	height:30px;
-	width:858px;
-	margin-left:3px;
+	
+	margin-left:0px;
 }
 
 .cooperator_name {
@@ -797,11 +833,17 @@ hr {
 }
 
 #teacher_select_region {
-	width:857px;
-	margin-left:2px;
-	margin-bottom:5px;
-	border: 1px solid #A09F9F;
-	box-shadow: 2px 2px 1px #C2BCBC;
+	background-color:rgb(241,242,242);
+	padding-left:5%;
+	padding-right:5%;
+	padding-top:20px;
+	margin-top:10px;
+	padding-bottom:20px;
+
+	margin-bottom:25px;
+	text-align:left;
+	font-size:13px;
+
 }
 
 #teacher_score p img {
@@ -810,6 +852,13 @@ hr {
 
 #teacher_select_region p a {
 	font-family:"黑体";
+	
+}
+
+.t_favicon {
+	width:200px;
+	height:200px;
+	border:solid #ccc 1px;
 }
 
 .favicon {
@@ -833,14 +882,16 @@ hr {
 
 .user_name {
 	font-family: "微软雅黑" "黑体";
-	font-size: 15px;
-	color:#099DF8;
+	font-size: 20px;
+	color:rgb(123,138,146);
 }
 
-#file_list_tile li {
+#list_title li {
 	font-family: "微软雅黑" "黑体";
 	font-size: 17px;
-	color:#099DF8;
+	color:#000;
+	text-align:center;
+	cursor:hand;
 }
 
 .claim_dream_div {

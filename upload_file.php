@@ -29,7 +29,7 @@
 				$data = $res->insert_resource($_FILES["file"]["name"], $type, $file_type, $id, $_FILES["file"]["size"]);
 				
 				move_uploaded_file($_FILES["file"]["tmp_name"],
-				UPLOAD_DIR."\\".$_SESSION['valid_user']."_haijiaoketang_".$name);
+				UPLOAD_DIR."\\".$id."_haijiaoketang_".$name);
 				header("Location: resource.php");
 				exit;
 			}

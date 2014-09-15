@@ -22,7 +22,7 @@
 					return;
 			}
 		
-			demand_user_id = my.parentNode.childNodes[0].innerHTML;
+			demand_user_id = my.parentElement.children[0].innerHTML;
 			$("#post_message_modal").click();
 		}
 	
@@ -67,19 +67,15 @@
 	
 	<script language="javascript" src="js/selected_region.js"></script>
     <div id="contents">
-		<div id="teacher_select_region" style="border:1px solid #ccc">
+		<div id="teacher_select_region" >
 			<p><span class="category">年级分类:</span><a class="item_selected">不限</a><a>一年级</a><a>二年级</a><a>三年级</a><a>四年级</a><a>五年级</a><a>六年级</a></P>
 			<hr>
 			<p><span class="category">家教科目:</span><a>不限</a><a>语文</a><a>数学</a><a>英语</a><a>物理</a><a>化学</a><a>生物</a></P>
 			<hr>
-			<p><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
+			<p style="padding-right:110px;"><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
 				<a>河北</a><a>山西</a><a>辽宁</a><a>吉林</a><a>黑龙江</a><a>江苏</a><a>浙江</a><a>安徽</a><a>福建</a>
 				<a>江西</a><a>河南</a><a>陕西</a><a>海南</a>
-				<?php
-					for($i = 0;$i < 30;$i++) {
-						echo '&nbsp';
-					}
-				?>
+			
 				<a>四川</a><a>贵州</a>
 				<a>广东</a><a>广西</a><a>山东</a><a>内蒙古</a><a>宁夏</a><a>新疆</a>
 				<a>湖南</a><a>湖北</a><a>甘肃</a><a>西藏</a>
@@ -87,10 +83,10 @@
 			<hr>
 			<p><span class="category">学生性别:</span><a>不限</a><a>男</a><a>女</a></P>
 		</div>
-		<div id="sort_region" style="margin-top:10px;margin-bottom:0px;height:40px;">
-			<button class="btn btn-primary" style="float:right;margin-bottom:0px;margin-right:40px;" onclick = "check_user_login()">
-				发布需求
-			</button>
+		<div id="sort_region" style="margin-top:10px;margin-bottom:0px;">
+			<div  style="border:solid 2px #B3AFAF;cursor:hand;height:25px;width:100px;font-size:17px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
+				<p style="margin-top:2px;text-align:center">发布需求</p>
+			</div>
 			<button class="btn btn-primary hide" data-toggle="modal" data-target="#myModal" id="post_demand_modal">
 				发布需求
 			</button>
@@ -121,7 +117,7 @@
 							$('#message_warning')[0].innerHTML = (" 留言不能为空");
 							return;
 						}
-						if(demand_user_id === -1) {
+						if(demand_user_id == -1 || demand_user_id == undefined) {
 							alert("该信息非法，无法发表留言");
 							return;
 						}
@@ -295,14 +291,23 @@
 						if($name["has_pic"] == 0) {
 							echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon">'; 
 						} else {
-							echo '<img src="favicon_dir/'.$name["name"].'.png" alt="img" id="teacher_favicon" class="favicon">'; 
+							echo '<img src="favicon_dir/'.$name["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">'; 
 						}
 			echo '
-						<div  style="margin-top:7px;">
+						<div  style="margin-top:30px;">
 							<p width="200px">
-								<span class="user_name"><b>'.$item['name'].'</b>
+								<span class="user_name"><b>';
+								
+								if(strlen($item['name']) > 12) {
+									echo substr($item['name'], 0, 12);
+								} else {
+									echo $item['name'];
+								}
+			echo '</b>
 								</span> 
-								<div ><span style="display:none">'.$item['user_id_user'].'</span><div onclick="post_message_check(this)" src="images/leave_message.png" class="leave_message_button">给我留言</div></div>
+								<div ><span style="display:none">'.$item['user_id_user'].'</span>
+								<!--	<div onclick="post_message_check(this)" src="images/leave_message.png" class="leave_message_button">给我留言</div>
+								--></div>
 							</p>
 							<p></p>
 							<p></p>
@@ -315,7 +320,7 @@
 			} else {
 				echo '保密';
 			}
-			echo '</p><p>所在地区：';
+			echo '</p><p>联系方式:'.$item['phone'].'</p><p>所在地区：';
 			if($item['addr'] == '') {
 				echo '未知';
 			} else {
@@ -330,11 +335,19 @@
 			echo	'</p><p>发布日期：'.$item['time'].'</p>
 						</div>
 						</div>
+						<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
+					
 						<div id="teacher_intro_right" >
-							<div style="margin-left:8px">
-							<h4>需求描述</h4>
-							<p>'.$item['description'].'</p>
-							<p>联系方式:'.$item['phone'].'</p></div>
+							<div style="margin-left:15%;margin-top:45px;margin-right:10%;">
+								<span style="display:none">'.$item['user_id_user'].'</span>
+								<div style="padding-top:1px;height:33px;background:url(../images/demand_back.png);background-repeat:no-repeat;color:#fff;">
+									<p style="font-size:17px;margin-left:7px;margin-top:5px;color:#fff;">需求描述</p>
+								</div>
+								<p style="margin-top:15px;margin-left:15px;">'.$item['description'].'</p>
+								<div class="detail" onclick="post_message_check(this)">
+									<p style="padding-right:0px;margin-left:5px;">给我留言</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>';

@@ -178,15 +178,21 @@
 				}); 
 			}
 			
+			function undisplay_underline() {
+				arr = $("#list_title").children();
+				for(var i = 0;i < arr.length;i++) {
+					arr[i].children[1].style.display="none";
+				}
+			}
+			
 			function change_selected(my) {
-				$item = $(".active")[0];
-				$item.className = "";
-				my.parentNode.className = "active";
-				if(my.innerHTML == "基本信息") {
+				undisplay_underline();
+				my.children[1].style.display = "block";
+				if(my.children[0].innerHTML == "基本信息") {
 					document.getElementById("message_div").style.display = "none";
 					document.getElementById("personnal_info_div").style.display = "block";
 					document.getElementById("lesson_div").style.display = "none";
-				} else if(my.innerHTML == "留言版") {
+				} else if(my.children[0].innerHTML == "留言版") {
 					document.getElementById("message_div").style.display = "block";
 					document.getElementById("personnal_info_div").style.display = "none";
 					document.getElementById("lesson_div").style.display = "none";
@@ -198,25 +204,23 @@
 			}
 		</script>
 			<div id="contents">
-				<div class="title_background" >
-					<p class="title">个人中心</p>
-				</div>
-				<div>
-					<div id="left_sidebar">
-						<ul class="nav nav-tabs nav-stacked" role="tablist">
-						  <li role="presentation" class="active"><a onclick="change_selected(this)" >基本信息</a></li>
-						  <li role="presentation"><a onclick="change_selected(this)" >留言版</a></li>
-<?php
+				<ul class="nav nav-tabs " role="tablist" id="list_title" style="margin-top:30px;border-bottom:0px;margin-bottom:0px;">
+					<li style="width:150px;margin-left:50px;" onclick="change_selected(this)"><p>基本信息</p><div style="height:5px;background-color:rgb(75,92,102)"></div></li>
+					<li style="width:150px;margin-left:10px;" onclick="change_selected(this)"><p>留言版</p><div style="display:none;height:5px;background-color:rgb(75,92,102)"></div></li>
+				<?php
 						require_once("user.php");
 						$user = new User();
 						$data = $user->get_personal_info($_SESSION['valid_user']);
 						if($data[0]['type'] == 'teacher') {
-							echo ' <li role="presentation"><a onclick="change_selected(this)" >课程列表</a></li>';
+							echo '	<li style="width:150px;margin-left:10px;" onclick="change_selected(this)"><p>课程列表</p><div style="display:none;height:5px;background-color:rgb(75,92,102)"></div></li>
+									';
 						}
 ?>
-						</ul>
+				</ul>
+				<hr style="margin-top:0px;border-top: 2px solid rgb(241,242,242);"/>
+
+				<div style="background-color:rgb(241, 242, 242);min-height:500px;">
 					
-					</div>
 					
 					<div class="modal fade hide" id="modify_passwd_modal"  role="dialog" >
 						  <div class="modal-dialog">
@@ -285,26 +289,26 @@
 						  </div>
 						</div>
 						
-						
-						<div class="modal fade hide" id="changePic"  role="dialog" >
-							  <div class="modal-dialog">
-								<div class="modal-content">
-								  <div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" id="close_post_message" ><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
-									<h4 class="modal-title" id="myModalLabel">上传头像</h4>
-								  </div>
-								  <div class="modal-body">
-									 <form action="upload_favicon.php" method="post" enctype="multipart/form-data" >
-										<input  type="file" name="file" id="choose_file_button" />
-										<input class="btn" type="submit" name="submit" value="上传" id="update_file_button"/>
-									 </form>
-								  </div>
-								  
-								</div>
-							  </div>
-							</div>
+					
+					<div class="modal fade hide" id="changePic"  role="dialog" >
+					  <div class="modal-dialog">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" id="close_post_message" ><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+							<h4 class="modal-title" id="myModalLabel">上传头像</h4>
+						  </div>
+						  <div class="modal-body">
+							 <form action="upload_favicon.php" method="post" enctype="multipart/form-data" >
+								<input  type="file" name="file" id="choose_file_button" />
+								<input class="btn" type="submit" name="submit" value="上传" id="update_file_button"/>
+							 </form>
+						  </div>
+						  
+						</div>
+					  </div>
+					</div>
 
-										
+									
 
 					
 					<div class="main_center" id="personnal_info_div">
@@ -373,9 +377,8 @@
 					</div>
 
 					<div class="main_center" style="display:none;" id="lesson_div">
-						<div style="background-color:#ccc;margin-bottom:5px;height:30px;text-align:center;font-family:'黑体';line-height:2;">
-								课程列表
-							</div>
+						
+						
 							<div>
 							
 							<?php
@@ -412,9 +415,7 @@
 					<div class="main_center" style="display:none;" id="message_div">
 						
 						<div id="section">
-							<div style="background-color:#ccc;margin-bottom:5px;height:30px;text-align:center;font-family:'黑体';line-height:2;">
-								留言板
-							</div>
+							
 							<div style="font-family:'黑体';margin-left:10px;">
 							<?php
 								require_once("user.php");
