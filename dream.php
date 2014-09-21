@@ -323,120 +323,124 @@
 		  </div>
 		</div>
 	
-	<div id="contents">
-		<div id="teacher_select_region">
-			<p><span>时间分类:</span><a>不限</a><a>今日</a><a>一周内</a><a>一月内</a></P>
-			<p style="padding-right:110px;"><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
-				<a>河北</a><a>山西</a><a>辽宁</a><a>吉林</a><a>黑龙江</a><a>江苏</a><a>浙江</a><a>安徽</a><a>福建</a>
-				<a>江西</a><a>河南</a><a>陕西</a><a>海南</a>
-			
-				<a>四川</a><a>贵州</a>
-				<a>广东</a><a>广西</a><a>山东</a><a>内蒙古</a><a>宁夏</a><a>新疆</a>
-				<a>湖南</a><a>湖北</a><a>甘肃</a><a>西藏</a>
-			</P>
-			<p><span>认领与否:</span><a>不限</a><a>未认领</a><a>已认领</a></P>
-		</div>
-		
-		<div id="sort_region" >
-			<div  style="border:solid 2px #B3AFAF;cursor:hand;height:25px;width:100px;font-size:17px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
-				<p style="margin-top:2px;text-align:center">发布心愿</p>
-			</div>
-			<button class="btn btn-primary hide" data-toggle="modal" data-target="#myModal" id="post_demand_modal">
-				发布心愿
-			</button>
-			<button class="btn btn-primary hide" data-toggle="modal" data-target="#message_modal" id="post_message_modal">
-				发布心愿
-			</button>
-		</div>
-		
-		<div id="teacher_result_region" style="border:1px solid #ccc">
-<?php
-	require_once("user.php");
-	require_once("db_dream.php");
-	require_once("config_show.php");
-	$d = new Dream();
-	$user = new User();
-	$count = 0;
-	$page_num = 1;
-	$count = $d->select("select count(*) from dream");
-	$count = $count[0]['count(*)'];
-	$data = $d->select("select * from dream order by id_dream desc limit 0,".DEMAND_PAGE_NUM);
-	
-	foreach ($data as $item) {
-		echo '
-			<div id="teacher_intro">
-				<div id="dream_intro_left"> ';
-				$has_pic = $user->get_personal_info_from_id($item['user_id_user']);
-				$has_pic = $has_pic[0];
-				if($has_pic['has_pic'] == 0) {
-					echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon" class="t_favicon">'; 
-				} else {
-					echo '<img src="favicon_dir/'.$has_pic["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">';
-				}
-		echo '
-				<div style="margin-top:35px">
-				<p> <span class="user_name"><b>'.$item['name'].'</b></span> 
+		<div id="contents">
+			<div id="teacher_select_region">
+				<p><span>时间分类:</span><a>不限</a><a>今日</a><a>一周内</a><a>一月内</a></P>
+				<div><p style="padding-right:110px;"><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
+					<a>河北</a><a>山西</a><a>辽宁</a><a>吉林</a><a>黑龙江</a><a>江苏</a><a>浙江</a><a>安徽</a><a>福建</a>
+					<a>江西</a><a>河南</a><a>陕西</a><a>海南</a>
+				
+					<a>四川</a><a>贵州</a>
 					</p>
-					<p><span >心愿:</span>'.$item['description'].'</p>';
-		echo '<p><span >心愿故事:</span>'.$item['story'].'</p>';
-		echo '<p><span >所在地区:</span>'.$item['addr'].'</p>';
-		echo '<p><span >联系方式:</span>'.$item['phone'].'</p>';
-		echo '</div></div>';
-		echo 
-			'<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
-					
-				<div id="dream_intro_right" >
-					<div style="text-align:center;">
-						<span style="display:none">'.$item['id_dream'].'</span>';
-						if($item['state'] == 1) {
-							echo '<div class="detail" onclick="check_user_login2(this)" style="margin-top:100px;margin-left:20%;">
-									<p style="padding-right:0px;">认领心愿</p>
-								</div>';
-						} else {
-							echo '<div style="margin-top:100px;margin-left:20%;text-align:left;">';
-					
-							echo '<p style="margin-left: -10px;">
-							<span class="user_name"><b>'.$item['dream_helper_name'].'</b>&nbsp</span><b>'.$item['dream_helper_addr'].'</b></p>';
-							echo '<p >
-								<img src="images/renling.jpg" style="margin-left:-50;width: 30px;"></p>
-								<div class="detail" style="margin-left:-10px;margin-top:-44px;text-align:center;font-size:15px;background-color:rgb(75,92,102);color:#fff;">已认领</span></div>';	
-							echo '</div>';
-						}
+					<p style="margin-left:90px;"><a style="margin-left:7px;	margin-right:0px;font-weight:normal;font-size:13px;">广东</a><a>广西</a><a>山东</a><a>内蒙古</a><a>宁夏</a><a>新疆</a>
+						<a>湖南</a><a>湖北</a><a>甘肃</a><a>西藏</a>
+					</p>
+				</div>
+				<p><span>认领与否:</span><a>不限</a><a>未认领</a><a>已认领</a></P>
+			</div>
+			
+			<div id="sort_region" >
+				<div  style="border:solid 1px rgb(72,92,102);cursor:hand;height:25px;width:100px;font-size:15px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
+					<p style="margin-top:2px;text-align:center">发布心愿</p>
+				</div>
+				<button class="btn btn-primary hide" data-toggle="modal" data-target="#myModal" id="post_demand_modal">
+					发布心愿
+				</button>
+				<button class="btn btn-primary hide" data-toggle="modal" data-target="#message_modal" id="post_message_modal">
+					发布心愿
+				</button>
+			</div>
+			
+			<div id="teacher_result_region" >
+	<?php
+		require_once("user.php");
+		require_once("db_dream.php");
+		require_once("config_show.php");
+		$d = new Dream();
+		$user = new User();
+		$count = 0;
+		$page_num = 1;
+		$count = $d->select("select count(*) from dream");
+		$count = $count[0]['count(*)'];
+		$data = $d->select("select * from dream order by id_dream desc limit 0,".DEMAND_PAGE_NUM);
+		
+		foreach ($data as $item) {
+			echo '
+				<div id="teacher_intro">
+					<div id="dream_intro_left"> ';
+					$has_pic = $user->get_personal_info_from_id($item['user_id_user']);
+					$has_pic = $has_pic[0];
+					if($has_pic['has_pic'] == 0) {
+						echo '<img src="images/favicon.gif" alt="img" id="teacher_favicon" class="t_favicon">'; 
+					} else {
+						echo '<img src="favicon_dir/'.$has_pic["name"].'.png" alt="img" id="teacher_favicon" class="t_favicon">';
+					}
+			echo '
+					<div style="margin-top:35px">
+					<p> <span class="user_name"><b>'.$item['name'].'</b></span> 
+						</p>
+						<p><span >心愿:</span>'.$item['description'].'</p>';
+			echo '<p><span >心愿故事:</span>'.$item['story'].'</p>';
+			echo '<p><span >所在地区:</span>'.$item['addr'].'</p>';
+			echo '<p><span >联系方式:</span>'.$item['phone'].'</p>';
+			echo '</div></div>';
+			echo 
+				'<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:200px;"></div>
 						
-				echo '	</div>
+					<div id="dream_intro_right" >
+						<div style="text-align:center;">
+							<span style="display:none">'.$item['id_dream'].'</span>';
+							if($item['state'] == 1) {
+								echo '<div class="detail" onclick="check_user_login2(this)" style="margin-top:100px;margin-left:20%;">
+										<p style="padding-right:0px;">认领心愿</p>
+									</div>';
+							} else {
+								echo '<div style="margin-top:100px;margin-left:20%;text-align:left;">';
+						
+								echo '<p style="margin-left: -10px;">
+								<span class="user_name"><b>'.$item['dream_helper_name'].'</b>&nbsp</span><b>'.$item['dream_helper_addr'].'</b></p>';
+								echo '<p >
+									<img src="images/renling.jpg" style="margin-left:-50;width: 30px;"></p>
+									<div class="detail" style="margin-left:-10px;margin-top:-44px;text-align:center;font-size:15px;background-color:rgb(75,92,102);color:#fff;">已认领</span></div>';	
+								echo '</div>';
+							}
+							
+					echo '	</div>
+					</div>
+				</div>
+			';
+		}
+		
+		echo '
+				<div id="page_select">
+					<span  id="page_num" style="display:none">'.$page_num.'</span>
+					<div class="btn-group"  style="margin-bottom:5px;">';
+			
+		if($page_num != 1) {
+			echo '<button type="button" class="btn btn-default"  onclick="select_page(this)">上一页</button>';
+		}
+		$i = 1;
+		if($page_num - 5 > 0) {
+			$i = $page_num - 5;
+		}
+		for(;$i <= ($count - 1 + DEMAND_PAGE_NUM)/DEMAND_PAGE_NUM && $i < 10;$i++) {
+			if($page_num == $i)
+				echo '<button type="button" class="btn btn-default"  onclick="select_page(this)"  disabled="disabled"><b>'.$i.'</b></button>';
+			else 
+				echo '<button type="button" class="btn btn-default"  onclick="select_page(this)">'.$i.'</button>';
+		}
+		if( $count/DEMAND_PAGE_NUM > $page_num ) {
+			echo '<button type="button" class="btn btn-default"  onclick="select_page(this)">下一页</button>';
+		}
+		echo'
 				</div>
 			</div>
-		';
-	}
-	
-	echo '
-			<div id="page_select">
-				<span  id="page_num" style="display:none">'.$page_num.'</span>
-				<div class="btn-group"  style="margin-bottom:5px;">';
-		
-	if($page_num != 1) {
-		echo '<button type="button" class="btn btn-default"  onclick="select_page(this)">上一页</button>';
-	}
-	$i = 1;
-	if($page_num - 5 > 0) {
-		$i = $page_num - 5;
-	}
-	for(;$i <= ($count - 1 + DEMAND_PAGE_NUM)/DEMAND_PAGE_NUM && $i < 10;$i++) {
-		if($page_num == $i)
-			echo '<button type="button" class="btn btn-default"  onclick="select_page(this)"  disabled="disabled"><b>'.$i.'</b></button>';
-		else 
-			echo '<button type="button" class="btn btn-default"  onclick="select_page(this)">'.$i.'</button>';
-	}
-	if( $count/DEMAND_PAGE_NUM > $page_num ) {
-		echo '<button type="button" class="btn btn-default"  onclick="select_page(this)">下一页</button>';
-	}
-	echo'
+			';
+	?>
 			</div>
 		</div>
-		';
-?>
-		</div>
-	</div>
+	
+	
 <?php
 	require("footer.php");
 	do_footer();

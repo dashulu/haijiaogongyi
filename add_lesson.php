@@ -19,15 +19,18 @@
 	$data = $d->insert_lesson($id, $lesson_name, $lesson_grade);
 	foreach($data as $item) {
 		echo '<div><input type="text" style="margin-top:10px;height:inherit;margin-left:80px;width:100px;" id="user_name" value="'.
-											$item["name"].'" readonly="true"/><input  type="text" style="margin-top:10px;height:inherit;margin-left:80px;width:100px" id="user_name" value="'.
-											$item["grade"].'" readonly="true"/>
-												<span style="display:none">'.$item['id_lesson'].'</span>
-												<div class="btn-group" >
-												  <button type="button" class="btn btn-default" onclick="lesson_edit(this)">编辑</button>
-												  <button type="button" class="btn btn-default" onclick="lesson_save(this)">保存</button>
-												  <button type="button" class="btn btn-default" onclick="lesson_delete(this)">删除</button>
-												</div></div>';
+				$item["name"].'" readonly="true"/><input  type="text" style="margin-top:10px;height:inherit;margin-left:80px;width:100px" id="user_name" value="'.
+				$item["grade"].'" readonly="true"/>
+					<span style="display:none">'.$item['id_lesson'].'</span>
+					<div class="btn-group" style="margin-top:-20px;">
+					  <div style="color:rgb(241,242,242);margin-left:15px;float:left;width:50;background:rgb(75,92,102);" class="detail" onclick="lesson_edit(this)">编辑</div>
+					  <div style="color:rgb(241,242,242);margin-left:5px;float:left;width:50;background:rgb(75,92,102);" class="detail" onclick="lesson_save(this)">保存</div>
+					  <div style="color:rgb(241,242,242);margin-left:5px;float:left;width:50;background:rgb(75,92,102);" class="detail" onclick="lesson_delete(this)">删除</div>
+					</div></div>';
+		
 	}
+								
+	
 	exit;
 	
 ?>

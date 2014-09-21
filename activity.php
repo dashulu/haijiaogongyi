@@ -173,7 +173,7 @@
 		
 					
 				<div id="activity_main">
-					<div style="margin:10 10 10 10;font-family:黑体;display:none"  id="activity5_div" >
+					<div style="margin:10 10 10 10;font-family:微软雅黑;display:none"  id="activity5_div" >
 						<h1>“梦想课堂”系列公益讲座成功举办</h1>
 						<p>
 							&nbsp&nbsp&nbsp&nbsp2013年11月11日，海角公益成功与思源公益一起举办了“梦想课堂”系列公益讲座活动。本活动通过大学老师的激情演讲和切实体会，助力更多山区孩子寻找人生方向，放飞人生梦想。</p>
@@ -191,7 +191,7 @@
 							返回
 						</div>
 					</div>
-					<div style="margin:10 10 10 10;font-family:黑体;display:none" id="activity4_div" >
+					<div style="margin:10 10 10 10;font-family:微软雅黑;display:none" id="activity4_div" >
 						<h1>沪内爱心家教系列活动成功举行</h1>
 						<p>
 							&nbsp&nbsp&nbsp&nbsp从2013年12月23日海角公益与上海交大家教部正式签约起，至今，海角在线教学房间已成功进行爱心家教1000余次。此系列公益活动旨在帮助沪内需要学业辅导的孩子享受高校师资，体验现代教育，助力其努力学习奋发向上。</p>
@@ -207,7 +207,7 @@
 							返回
 						</div>
 					</div>
-					<div style="margin:10 10 10 10;font-family:黑体;display:none" id="activity3_div" >
+					<div style="margin:10 10 10 10;font-family:微软雅黑;display:none" id="activity3_div" >
 						<h1>海角公益校际远程教学交流成功进行</h1>
 						<p>
 							&nbsp&nbsp&nbsp&nbsp2014年1月1日起，海角公益组织开始进行校际远程教学交流活动。在活动当中，海角已经覆盖10余所中小学，遍及5个区县，为参与教师提供了便捷、流畅的在线远程教学交流活动新体验，得到了老师们的肯定。
@@ -231,7 +231,7 @@
 							返回
 						</div>
 					</div>
-					<div style="margin:10 10 10 10;font-family:黑体;display:none" id="activity2_div" >
+					<div style="margin:10 10 10 10;font-family:微软雅黑;display:none" id="activity2_div" >
 						<h1>筑梦圆梦系列活动顺利举行</h1>
 						<p>
 							&nbsp&nbsp&nbsp&nbsp2014年7月起，海角公益组织前往吉林、甘肃等地进行线上线下结合的支教实践活动，活动惠及中小学生及在再培训教师超过1000余人。海角公益组织发起了筑梦圆梦系列活动，由这些学生通过海角发布自己的心愿，社会爱心人士可以在海角的爱心墙上认领心愿，从而帮助这些贫困地区的孩子们实现愿望。活动取得了良好的反响。
@@ -252,7 +252,7 @@
 							返回
 						</div>
 					</div>
-					<div style="margin:10 10 10 10;font-family:黑体;display:none" id="activity1_div" >
+					<div style="margin:10 10 10 10;font-family:微软雅黑;display:none" id="activity1_div" >
 						<h1>在 线 支 教 新 体 验</h1>
 							<h2 style="margin-left:100px">——记上海交通大学海角公益组织在线支教活动</h2>
 
@@ -287,7 +287,7 @@
 							返回
 						</div>
 					</div>
-					<div style="margin:10 10 10 10;font-family:黑体;display:none" id="activity0_div" >
+					<div style="margin:10 10 10 10;font-family:微软雅黑;display:none" id="activity0_div" >
 						<h1>上海交通大学海角公益组织赴甘肃甘谷开展支教</h1>
 						<p>
 							&nbsp&nbsp&nbsp&nbsp8月8日至15日，来自上海交通大学的海角公益组织从上海出发，经过27个小时的奔波，跨越了超过1713公里的距离，来到甘肃省天水市甘谷县，在总门学校等5所中小学开展支教及走访调研活动。</p>

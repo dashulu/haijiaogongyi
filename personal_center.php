@@ -318,13 +318,15 @@
 							require_once("user.php");
 							$user = new User();
 							$data = $user->get_personal_info($_SESSION['valid_user']);
-							echo '<div style="float:left;width:180px;">';
+							echo '<div style="float:left;width:240px;">';
 							if($data[0]["has_pic"] == 0)
-								echo '	<img src="images/favicon.gif" class="favicon" alt="Img" style="float:left;margin-left:10px;margin-top:10px;margin-right:10px" >';
+								echo '	<img src="images/favicon.gif" class="t_favicon" alt="Img" style="float:left;margin-left:10px;margin-top:50px;margin-right:10px" >';
 							else 
-								echo '	<img src="favicon_dir/'.$_SESSION['valid_user'].'.png" class="favicon" alt="Img" style="float:left;margin-left:10px;margin-top:10px;margin-right:10px" >';
+								echo '	<img src="favicon_dir/'.$_SESSION['valid_user'].'.png" class="t_favicon" alt="Img" style="float:left;margin-left:10px;margin-top:50px;margin-right:10px" >';
 							echo '	
-									<button class="btn" data-toggle="modal" data-target="#changePic" style="margin-top:10px;margin-left:30px;">更改头像</button>
+									<div class="detail" data-toggle="modal" data-target="#changePic" 
+											style="background: rgb(75,92,102);color: rgb(241,242,242);
+											margin-top:260px;margin-left:65px;font-family:微软雅黑">更改头像</div>
 									</div>
 									<div style="float:left;" id="person_info">';
 							
@@ -345,29 +347,31 @@
 							echo '<p><span class="personal_item"> 学校:</span><input type="text" id="user_school" value="'.$data[0]["school"].'" readonly="true"/></p>';
 							echo '<p><span class="personal_item"> 地址:</span><input type="text" id="user_addr" value="'.$data[0]["addr"].'" readonly="true"/></p>';
 							echo '<p><span class="personal_item"> 工作:</span><input type="text" id="user_job" value="'.$data[0]["job"].'" readonly="true"/></p>';
-							echo '<p><span class="personal_item"> 评价:</span> <img src="images/star.jpg" width="15px" height="15px">';
-							for($i=0;$i < 5;$i++) {
+							echo '<p><span class="personal_item"> 评价:</span> <img style="margin-left:7px;" src="images/star.jpg" width="30px" height="30px">';
+						//	echo '<p><span class="personal_item"> 海角币:</span><input type="text" id="user_job" value="'.$data[0]["job"].'" readonly="true"/></p>';
+							
+							
+							for($i=1;$i < 5;$i++) {
 								if($data[0]['score'] - $i >= 1) {
-									echo '<img src="images/star.jpg" width="15px" height="15px">';
-								} else if($$data[0]['score'] - $i > 0) {
-									echo '<img src="images/half_star.png" width="15px" height="15px">';
+									echo '<img src="images/star.jpg" width="30px" height="30px">';
+								} else if($data[0]['score'] - $i > 0) {
+									echo '<img src="images/half_star.png" width="30px" height="30px">';
 								} else {
-									echo '<img src="images/nst.png" width="15px" height="15px">';
+									echo '<img src="images/nst.png" width="30px" height="30px">';
 								}
 							}
-							echo '<span>&nbsp&nbsp'.round($data[0]['score'], 1).'/'.$data[0]['score_count'].'</span>';
+							echo '<span style="font-size:15px;font-family:微软雅黑">&nbsp&nbsp'.round($data[0]['score'], 1).'/'.$data[0]['score_count'].'</span>';
 							echo '</p>';
 							echo '		
 								<div >
-									<button class="btn btn-primary" style="margin-bottom:10px;margin-left:40px;" onclick = "edit()">
-										编辑
-									</button>
-									<button class="btn btn-primary" style="margin-bottom:10px;margin-left:40px;" onclick = "save()">
-										保存
-									</button>
-									<button class="btn btn-primary" style="margin-bottom:10px;margin-left:40px;" data-toggle="modal" data-target="#modify_passwd_modal">
-										修改密码
-									</button>
+									<div class="detail" style="float:left;background: rgb(75,92,102);color: rgb(241,242,242);
+											margin-left:-10px;font-family:微软雅黑"  onclick = "edit()">编辑</div>
+									<div class="detail" style="float:left;background: rgb(75,92,102);color: rgb(241,242,242);
+											margin-left:5px;font-family:微软雅黑"  onclick = "save()">保存</div>
+									<div class="detail" style="float:left;background: rgb(75,92,102);color: rgb(241,242,242);
+											margin-left:5px;font-family:微软雅黑" 
+											data-toggle="modal" data-target="#modify_passwd_modal">修改密码</div>
+									
 									
 								</div>
 							';
@@ -389,34 +393,33 @@
 								$id = $id[0]['id_user'];
 								$m = new Lesson();
 								$data = $m->get_lesson($id);
-								echo '<span style="margin-left:100px;">课程名</span><span style="margin-left:150px;">年级</span>';
+								echo '<div><span style="margin-left:100px;font-family:微软雅黑;">课程名</span><span style="margin-left:150px;font-family:微软雅黑;">年级</span></div>';
 								echo '<div id="lesson_content_div">';
 								foreach($data as $item) {
 									echo '<div><input type="text" style="margin-top:10px;height:inherit;margin-left:80px;width:100px;" id="user_name" value="'.
 											$item["name"].'" readonly="true"/><input  type="text" style="margin-top:10px;height:inherit;margin-left:80px;width:100px" id="user_name" value="'.
 											$item["grade"].'" readonly="true"/>
 												<span style="display:none">'.$item['id_lesson'].'</span>
-												<div class="btn-group" >
-												  <button type="button" class="btn btn-default" onclick="lesson_edit(this)">编辑</button>
-												  <button type="button" class="btn btn-default" onclick="lesson_save(this)">保存</button>
-												  <button type="button" class="btn btn-default" onclick="lesson_delete(this)">删除</button>
+												<div class="btn-group" style="margin-top:-20px;">
+												  <div style="color:rgb(241,242,242);margin-left:15px;float:left;width:50;background:rgb(75,92,102);" class="detail" onclick="lesson_edit(this)">编辑</div>
+												  <div style="color:rgb(241,242,242);margin-left:5px;float:left;width:50;background:rgb(75,92,102);" class="detail" onclick="lesson_save(this)">保存</div>
+												  <div style="color:rgb(241,242,242);margin-left:5px;float:left;width:50;background:rgb(75,92,102);" class="detail" onclick="lesson_delete(this)">删除</div>
 												</div></div>';
 									
 								}
 								echo '</div>';
 								
-								echo '<button class="btn btn-primary" style="margin-bottom:10px;margin-left:280px;margin-right:auto;" data-toggle="modal" data-target="#add_lesson_modal">
+								echo '<div style="color:rgb(241,242,242);margin-left:305px;float:left;width:50;background:rgb(75,92,102);" class="detail" data-toggle="modal" data-target="#add_lesson_modal">
 									添加
-								</button>';
+								</div>';
 								
 							?>
 							</div>
 					</div>
 					<div class="main_center" style="display:none;" id="message_div">
-						
-						<div id="section">
+						<div id="section" style="background:#fff;" >
 							
-							<div style="font-family:'黑体';margin-left:10px;">
+							<div style="font-family:'微软雅黑';margin-left:10px;">
 							<?php
 								require_once("user.php");
 								require_once("db_message.php");
@@ -428,13 +431,15 @@
 								foreach($data as $item) {
 									
 									if($id == $item['user_id_from']) {
-										$name = $user->get_personal_info_from_id($item['user_id_to']);
-										$name = $name[0]['name'];
-										echo '<p> To '.$name.' ( '.$item['time'].' ):</p><p>    '.$item['content'].'</p>';
-									} else {
+								/*		$name = $user->get_personal_info_from_id($item['user_id_to']);
+										$name = $name[0]['name'];*/
+									} else {  
 										$name = $user->get_personal_info_from_id($item['user_id_from']);
 										$name = $name[0]['name'];
-										echo '<p> From '.$name.' ( '.$item['time'].' ):</p><p>    '.$item['content'].'</p>';
+									
+										echo '<div style="background:#fff;margin-left:20px;"><p style="font-size:12px;color: rgb(159, 162, 165);"> <img style="margin-right:20px;" height="20px" width="20px" src="favicon_dir/'.$name.'.png" />';
+										echo $name.' </p><p style="font-size:15px;">'.$item['content'].'</p><span style="color: rgb(159, 162, 165);font-size:8px;">  '.$item['time'].'  </span> </p><hr /></div>';
+									
 									}
 								}
 								

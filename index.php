@@ -14,10 +14,10 @@
 				setInterval(changePic, 5000);
 			</script>
 			
-			<div id="contents">
+			<div id="contents" style="margin-top:-3px;">
 				<div style="height:300px;">
 					<div id="testimonials" class="box">
-						<div>
+						<div style="padding:0 0">
 							<img src="images/header-pic.png" alt="Img" id="head1" style="height:300px;width:100%;">
 							<img src="images/jdback.png" alt="Img" id="head2" style="display:none;height:300px;width:100%;">
 							<img src="images/back.png" alt="Img" id="head3" style="display:none;height:300px;width:100%;">

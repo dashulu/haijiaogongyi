@@ -36,11 +36,11 @@
 	}
 	$data = $d->select($sql);
 	
-		
+	
 	foreach ($data as $item) {
 		echo '
 			<div id="teacher_intro" style="height:150px;">
-				<div id="teacher_intro_left" style="height:150px;">
+				<div id="downlaod_intro_left" style="height:150px;">
 			
 				';
 				
@@ -63,7 +63,7 @@
 				</div>
 				<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:100px;"></div>
 					
-				<div id="teacher_intro_right" style="height:150px;">
+				<div id="downlaod_intro_right" style="height:150px;">
 					<div id="teacher_score" style="text-align:center;margin-top:35px;">
 						<span style="display:none">'.$item['id_resource'].'</span>
 						<span style="display:none">'.$item['user_id_user'].'</span>
@@ -72,12 +72,12 @@
 					<!--	<li style="width:120px"><button type="button" class="btn btn-default" onclick="down(this)" style="font-family:'."'黑体'".';margin-top:-3px;">下载</button></li>
 					-->
 						
-						<div class="detail" onclick="down(this)" style="margin-left:43%;">
+						<div class="detail" onclick="down(this)" style="margin-left:78px;">
 							<p style="padding-right:0px;margin-left:5px;" >我要下载</p>
 						</div>
 					</div>
 				</div>
-				<hr />
+				<hr style="border-bottom:1px solid rgb(199, 205, 209);"/>
 			</div>
 		';
 
@@ -90,7 +90,6 @@
 			
 			';
 	}
-	
 	
 	echo '
 			<div id="page_select">

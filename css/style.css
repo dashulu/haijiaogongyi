@@ -1,7 +1,7 @@
 /* Website template by freewebsitetemplates.com */
 body {
 /*	background: #ffb744 url(../images/bg-body.jpg) repeat left bottom;*/
-	font-family: "微软雅黑", "黑体", Times, serif;
+	font-family: "微软雅黑", "微软雅黑", Times, serif;
 	margin: 0;
 }
 #background {
@@ -20,7 +20,9 @@ img {
 #navigation li, #navigation li a:hover, #navigation li.selected a {
 /*	background-image: url(../images/bg-menu.png);*/
 	background-repeat: repeat-x;
+	color:rgb(241,242,242);
 }
+
 #contents div.box, #contents div.box > div, #contents div.body {
 	background-image: url(../images/content-box.png);
 	background-repeat: no-repeat;
@@ -74,7 +76,7 @@ img {
 	
 .loginform_item {
 	text-align:center;
-	font-family:"黑体";
+	font-family:"微软雅黑";
 	font-size: 20px;
 	line-height: 1.6;
 	color: #fff;
@@ -94,7 +96,7 @@ img {
 .loginform_name_style{
 	margin-left: 5px;
 	font-size: 17px;
-	font-family: "黑体";
+	font-family: "微软雅黑";
 	color: #87CEFA;
 	height:25px;
 }
@@ -121,6 +123,11 @@ img {
 	margin: 0;
 	padding: 0;
 }
+
+#navigation li:hover {
+	background:#CFCECE;
+}
+
 #navigation li {
 	float: left;
 	height: 55px;
@@ -129,18 +136,32 @@ img {
 	padding-left: 1px;
 	text-align: center;
 }
+
+#welcome:hover {
+	background:#CFCECE;
+}
+
 #navigation li:first-child {
-	background: none;
+/*	background: none; */
 	margin-left: 0;
 	padding-left: 0;
 }
 
+#navigation li.selected {
+	background:rgb(72, 92, 102);
+}
+
+
+#navigation li.selected a p{
+	color:rgb(241, 242, 242);
+}
+
 #navigation li a p {
-	color: #fff;
+	color: rgb(72, 92, 102);
 	margin-top:0px;
 	margin-bottom:0px;
 /*	display: block;*/
-	font:  15px/31px "黑体", Arial, Helvetica, sans-serif;
+	font:  13px/31px "微软雅黑", Arial, Helvetica, sans-serif;
 	height: 15px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -149,7 +170,7 @@ img {
 #navigation li a {
 	color: #fff;
 /*	display: block;*/
-	font:  15px/31px "黑体", Arial, Helvetica, sans-serif;
+	font:  13px/31px "微软雅黑", Arial, Helvetica, sans-serif;
 	height: 15px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -164,7 +185,7 @@ img {
 }
 #navigation li.selected  {
 	background-color: rgb(75,92,102);
-
+	color:rgb(241,242,242);
 	height: 100%;
 }
 
@@ -583,54 +604,24 @@ hr {
 }
 /*------------------------------ FOOTER ------------------------------*/
 #footer {
-	color: #594334;
+	color: rgb(241, 242, 242);
 	font-size: 14px;
-	font-family:"黑体";
+	font-family:"微软雅黑";
 	line-height: 48px;
-	margin: -38px 0 20px;
 	padding-top: 42px;
 	text-transform: uppercase;
 }
 #footer > div {
-	background-color: #eee;
+	background-color: rgb(75, 92, 102);
 	height: 100px;
-	width: 90%;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
-	margin: 0 auto;
-	padding: 0 20px;
+	width: 100%;
 	text-align: right;
 }
-#footer ul.navigation {
-	float: left;
-	display: inline-block;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-#footer ul.navigation li {
-	float: left;
-	margin-right: 10px;
-}
-#footer ul.navigation li a {
-	color: #594334;
-	padding: 0 5px;
-	text-decoration: none;
-}
-#footer ul.navigation li:first-child a {
-	border-left: 0;
-	padding-left: 0;
-}
-#footer ul.navigation li a:hover {
-	color: #eee7c3;
-}
-#footer ul.navigation li.active a {
-	color: #fff;
-}
-#footer p {
-	margin: 0;
+
+#footer div p {
 	text-align: center;
 	text-transform: none;
+	margin-right:30px;
 }
 .copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 /** Connect **/
@@ -686,7 +677,7 @@ hr {
 	text-align:left;
 	margin-left:2px;
 	margin-bottom:5px;
-	font-family:"黑体";
+	font-family:"微软雅黑";
 	
 
 }
@@ -695,6 +686,18 @@ hr {
 	height:250px;
 	margin-bottom:15px;
 	
+}
+
+#downlaod_intro_left {
+	float:left;
+	width:75%;
+	height:250px;
+}
+
+#downlaod_intro_right {
+	float:left;
+	width:24%;
+	height:250px;
 }
 
 #teacher_intro_left {
@@ -726,7 +729,7 @@ hr {
 #teacher_intro  p {
 	margin:0 0 12;
 	padding-right:20px;
-	font-family:"黑体";
+	font-family:"微软雅黑";
 	font-size:15px;
 	color: rgb(123,138,146);
 }
@@ -781,6 +784,11 @@ hr {
 	margin-bottom:7px;
 }
 
+#teacher_select_region p a {
+	cursor:hand;
+	text-decoration:none;
+}
+
 #teacher_select_region p a:hover {
 	background-color:#cccccc;
 }
@@ -795,13 +803,13 @@ hr {
 }
 
 .detail {
-	border: solid 1px #B3AFAF;
+	border: solid 1px rgb(75,92,102);
 	width: 80px;
-	font-size: 20px;
+	font-size: 15px;
 	height: 20px;
 	padding: 5px;
 	margin-top:20px;
-	margin-left:50px;
+	text-align:center;
 	cursor:hand;
 }
 
@@ -812,7 +820,7 @@ hr {
 }
 
 .title {
-	font-family:"黑体";
+	font-family:"微软雅黑";
 	margin-left:10px;
 	margin-top:2px;
 	font-size:15px;
@@ -829,7 +837,7 @@ hr {
 .cooperator_name {
 	margin-top: 18px;
 	margin-left: 7px;
-	font-family: "黑体";
+	font-family: "微软雅黑";
 }
 
 #teacher_select_region {
@@ -851,7 +859,7 @@ hr {
 }
 
 #teacher_select_region p a {
-	font-family:"黑体";
+	font-family:"微软雅黑";
 	
 }
 
@@ -874,20 +882,20 @@ hr {
 #demand_table tr td  input{
 	height:30px;
 	width:300px;
-	font-family:"黑体";
+	font-family:"微软雅黑";
 }
 #demand_table tr td {
-	font-family:"黑体";
+	font-family:"微软雅黑";
 }
 
 .user_name {
-	font-family: "微软雅黑" "黑体";
+	font-family: "微软雅黑" "微软雅黑";
 	font-size: 20px;
 	color:rgb(123,138,146);
 }
 
 #list_title li {
-	font-family: "微软雅黑" "黑体";
+	font-family: "微软雅黑" "微软雅黑";
 	font-size: 17px;
 	color:#000;
 	text-align:center;
@@ -897,7 +905,7 @@ hr {
 .claim_dream_div {
 	margin-top: 60px;
 	margin-left: 90px;
-	font-family: "黑体";
+	font-family: "微软雅黑";
 	font-size: 18px;
 	background-color: #69BBE4;
 	height: 30px;
@@ -911,27 +919,36 @@ hr {
 }
 
 .dream_title {
-	font-family: "微软雅黑" "黑体";
+	font-family: "微软雅黑" "微软雅黑";
 	font-size: 15px;
 /*	color:#099DF8;*/
 	width:200px;
 }
 
 .personal_item {
-	font-family: "黑体" "微软雅黑";
+	font-family: "微软雅黑" "微软雅黑";
 	font-size: 15px;
 }
 
 #person_info {
-	margin-top:10px;
+	margin-top:30px;
+	margin-left:50px;
 }
 
 #person_info  p img{
 	margin-bottom:7px;
 }
 
+#person_info select {
+	height:30px;
+	margin-left:10px;
+	margin-top:3px;
+}
+
 #person_info input{
 	height:30px;
+	margin-left:10px;
+	margin-top:3px;
 }
 
 #page_select {

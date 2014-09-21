@@ -167,7 +167,7 @@
 				</div>	
 				<div id="background">
 						<div id="header" style="width:100%;margin-top:0px;">
-							<div id="top-bar" style="background:#bbb;height:5px;margin-bottom:0px;"></div>
+							<div id="top-bar" style="background:rgb(72,92,102);height:5px;margin-bottom:0px;"></div>
 							<div id="header-bar">
 								<div id="logo">
 									<a href="index.php"><img src="images/logo.png" style="float:left;height:55px;" alt="LOGO" ></a>
@@ -220,41 +220,41 @@
 										<li ';
 			if($page == "index")
 				echo 'class="selected"';
-			echo '	>
-											<a href="index.php"><p>网站首页</p><p>HOME</p></a>
+			echo '	 >
+											<a href="index.php"><p>网站首页</p><p style="font-size:1px;margin-top:3px;">HOME</p></a>
 										</li>
 										<li ';
 			if($page == "activity")
 				echo 'class="selected"';
 			echo '>
-											<a href="activity.php"><p>公益活动</p><p>ACTIVITY</p></a>
+											<a href="activity.php"><p>公益活动</p><p style="font-size:1px;margin-top:3px;">ACTIVITY</p></a>
 										</li>
 										<li ';
 			if($page == "demand")
 				echo 'class="selected"';
 			echo '>
-											<a href="demand.php"><p>需求大厅</p><p>DEMAND</p></a>
+											<a href="demand.php"><p>需求大厅</p><p style="font-size:1px;margin-top:3px;">DEMAND</p></a>
 										</li>
 										<li ';
 			if($page == "teacher")
 				echo 'class="selected"';
 			echo '>
-											<a href="teacher.php"><p>海角教师</p><p>TEACHER</p></a>
+											<a href="teacher.php"><p>海角教师</p><p style="font-size:1px;margin-top:3px;">TEACHER</p></a>
 										</li>
 										<li ';
 			if($page == "resource")
 				echo 'class="selected"';
 			echo '>
-											<a href="resource.php"><p>资源文库</p><p>RESOURCE</p></a>
+											<a href="resource.php"><p>资源文库</p><p style="font-size:1px;margin-top:3px;">RESOURCE</p></a>
 										</li>
 										<li ';
 			if($page == "dream")
 				echo 'class="selected"';
 			echo '>
-											<a href="dream.php"><p>筑梦圆梦</p><p>DREAM</p></a>
+											<a href="dream.php"><p>筑梦圆梦</p><p style="font-size:1px;margin-top:3px;">DREAM</p></a>
 										</li>
 										<li>
-											<a href="http://202.120.1.47/"><p>视频房间</p><p>ROOM</p></a>
+											<a href="http://202.120.1.47/"><p>视频房间</p><p  style="font-size:1px;margin-top:3px;">ROOM</p></a>
 										</li>
 										
 									</ul>
@@ -490,40 +490,40 @@
 			if($page == "index")
 				echo 'class="selected"';
 			echo '	>
-											<a href="index.php"><p>网站首页</p><p>HOME</p></a>
+											<a href="index.php"><p>网站首页</p><p style="font-size:1px;margin-top:3px;">HOME</p></a>
 										</li>
 										<li ';
 			if($page == "activity")
 				echo 'class="selected"';
 			echo '>
-											<a href="activity.php"><p>公益活动</p><p>ACTIVITY</p></a>
+											<a href="activity.php"><p>公益活动</p><p  style="font-size:1px;margin-top:3px;">ACTIVITY</p></a>
 										</li>
 										<li ';
 			if($page == "demand")
 				echo 'class="selected"';
 			echo '>
-											<a href="demand.php"><p>需求大厅</p><p>DEMAND</p></a>
+											<a href="demand.php"><p>需求大厅</p><p style="font-size:1px;margin-top:3px;">DEMAND</p></a>
 										</li>
 										<li ';
 			if($page == "teacher")
 				echo 'class="selected"';
 			echo '>
-											<a href="teacher.php"><p>海角教师</p><p>TEACHER</p></a>
+											<a href="teacher.php"><p>海角教师</p><p style="font-size:1px;margin-top:3px;">TEACHER</p></a>
 										</li>
 										<li ';
 			if($page == "resource")
 				echo 'class="selected"';
 			echo '>
-											<a href="resource.php"><p>资源文库</p><p>RESOURCE</p></a>
+											<a href="resource.php"><p>资源文库</p><p style="font-size:1px;margin-top:3px;">RESOURCE</p></a>
 										</li>
 										<li ';
 			if($page == "dream")
 				echo 'class="selected"';
 			echo '>
-											<a href="dream.php"><p>筑梦圆梦</p><p>DREAM</p></a>
+											<a href="dream.php"><p>筑梦圆梦</p><p style="font-size:1px;margin-top:3px;">DREAM</p></a>
 										</li>
 										<li>
-											<a href="http://202.120.1.47/"><p>视频房间</p><p>ROOM</p></a>
+											<a href="http://202.120.1.47/"><p>视频房间</p><p style="font-size:1px;margin-top:3px;">ROOM</p></a>
 										</li>
 										
 									</ul>

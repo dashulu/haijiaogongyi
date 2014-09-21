@@ -14,9 +14,24 @@ $(document).ready(function(){
 
 function item_selected(my) {
 	var child = my.parentNode.childNodes;
-	for(i = 1;i < child.length;i++) {
-		if(child[i].className = "item_selected" )
-			child[i].className = "";
+	if(child[0].innerHTML != "地区分类:" && child[0].innerHTML != "广东") {
+		for(i = 1;i < child.length;i++) {
+			if(child[i].className = "item_selected" )
+				child[i].className = "";
+		}
+	} else {
+		
+		child = my.parentNode.parentNode.childNodes[0].childNodes;
+		for(i = 1;i < child.length - 1;i++) {
+			if(child[i].className = "item_selected" )
+				child[i].className = "";
+		}
+		child = my.parentNode.parentNode.childNodes[2].childNodes;
+		for(i = 0;i < child.length;i++) {
+			if(child[i].className = "item_selected" )
+				child[i].className = "";
+		}
+		
 	}
 	my.className = "item_selected";
 	$("#page_num")[0].innerHTML = 1;

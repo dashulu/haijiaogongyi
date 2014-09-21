@@ -72,19 +72,22 @@
 			<hr>
 			<p><span class="category">家教科目:</span><a>不限</a><a>语文</a><a>数学</a><a>英语</a><a>物理</a><a>化学</a><a>生物</a></P>
 			<hr>
-			<p style="padding-right:110px;"><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
+			<div><p style="padding-right:110px;"><span class="category">地区分类:</span><a>不限</a><a>北京</a><a>上海</a><a>天津</a><a>重庆</a><a>香港</a><a>澳门</a><a>台湾</a>
 				<a>河北</a><a>山西</a><a>辽宁</a><a>吉林</a><a>黑龙江</a><a>江苏</a><a>浙江</a><a>安徽</a><a>福建</a>
 				<a>江西</a><a>河南</a><a>陕西</a><a>海南</a>
 			
 				<a>四川</a><a>贵州</a>
-				<a>广东</a><a>广西</a><a>山东</a><a>内蒙古</a><a>宁夏</a><a>新疆</a>
-				<a>湖南</a><a>湖北</a><a>甘肃</a><a>西藏</a>
-				</P>
+				</p>
+				<p style="margin-left:90px;"><a style="margin-left:7px;	margin-right:0px;font-weight:normal;font-size:13px;">广东</a><a>广西</a><a>山东</a><a>内蒙古</a><a>宁夏</a><a>新疆</a>
+					<a>湖南</a><a>湖北</a><a>甘肃</a><a>西藏</a>
+				</p>
+			</div>
+				
 			<hr>
 			<p><span class="category">学生性别:</span><a>不限</a><a>男</a><a>女</a></P>
 		</div>
 		<div id="sort_region" style="margin-top:10px;margin-bottom:0px;">
-			<div  style="border:solid 2px #B3AFAF;cursor:hand;height:25px;width:100px;font-size:17px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
+			<div  style="border:solid 1px rgb(75,92,102);cursor:hand;height:25px;width:100px;font-size:15px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
 				<p style="margin-top:2px;text-align:center">发布需求</p>
 			</div>
 			<button class="btn btn-primary hide" data-toggle="modal" data-target="#myModal" id="post_demand_modal">

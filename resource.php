@@ -128,20 +128,10 @@
 			</P>
 		</div>
 		
-		<div id="sort_region" style="margin-top:10px;margin-bottom:0px;height:40px;">
-		<!--	<button class="btn btn-primary ">
-				下载最多
-			</button>
-			<button class="btn btn-primary " >
-				时间排序
-			</button>-->
-			<div  style="border:solid 2px #B3AFAF;cursor:hand;height:25px;width:100px;font-size:17px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
-				<p style="margin-top:2px;text-align:center">我要上传</p>
-			</div>
-			
-
-			
+		<div  style="border:solid 1px rgb(72,92,102);cursor:hand;height:25px;width:100px;font-size:15px;font-family:微软雅黑;margin-top:-60px;float:right;margin-bottom:0px;margin-right:200px;" onclick = "check_user_login()">
+			<p style="margin-top:2px;text-align:center">我要上传</p>
 		</div>
+	
 		
 	
 		
@@ -163,7 +153,7 @@
 	foreach ($data as $item) {
 		echo '
 			<div id="teacher_intro" style="height:150px;">
-				<div id="teacher_intro_left" style="height:150px;">
+				<div id="downlaod_intro_left" style="height:150px;">
 			
 				';
 				
@@ -186,7 +176,7 @@
 				</div>
 				<div id="Layer1" style="float:left;margin-top:25px; width:1px; background-color:rgb(199, 205, 209);height:100px;"></div>
 					
-				<div id="teacher_intro_right" style="height:150px;">
+				<div id="downlaod_intro_right" style="height:150px;">
 					<div id="teacher_score" style="text-align:center;margin-top:35px;">
 						<span style="display:none">'.$item['id_resource'].'</span>
 						<span style="display:none">'.$item['user_id_user'].'</span>
@@ -195,12 +185,12 @@
 					<!--	<li style="width:120px"><button type="button" class="btn btn-default" onclick="down(this)" style="font-family:'."'黑体'".';margin-top:-3px;">下载</button></li>
 					-->
 						
-						<div class="detail" onclick="down(this)" style="margin-left:43%;">
+						<div class="detail" onclick="down(this)" style="margin-left:78px;">
 							<p style="padding-right:0px;margin-left:5px;" >我要下载</p>
 						</div>
 					</div>
 				</div>
-				<hr />
+				<hr <hr style="border-bottom:1px solid rgb(199, 205, 209);"/>
 			</div>
 		';
 
